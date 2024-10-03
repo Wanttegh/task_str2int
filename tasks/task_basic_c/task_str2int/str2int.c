@@ -55,7 +55,7 @@ int str2int(const char *str) {
     } 
     while (*str == ' ') str++;
 
-    if (more_than_int(str, sign) == 1) return 0;
+    assert(more_than_int(str, sign) != 1);
 
     while (*str){
     	if (*str >= '0' && *str <= '9') num = num*10 + (*str - '0');
