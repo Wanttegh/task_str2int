@@ -27,10 +27,9 @@ int str2int(const char *str) {
     if (str[0] == '-' || str[0] == '+'){
     	sign = (*str == '-') ? -1 : 1;
 	str++;
-    } 
+    }
     while (*str == ' ') str++;
     assert(access(str) != 0);
-    char * ptr;
 
     while (*str){
     	    if (*str >= '0' && *str <= '9') num = num*10 + (*str - '0');
@@ -38,6 +37,7 @@ int str2int(const char *str) {
         	str++;
     }
 
+	char * ptr;
     assert(num*sign == strtol(strc, &ptr, 10));
 
     return num * sign;
